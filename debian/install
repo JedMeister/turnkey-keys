@@ -1,0 +1,2 @@
+debian/tkl-*.gpg    /usr/share/keyrings/
+debian/tkl-*.asc    /usr/share/keyrings/

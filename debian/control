@@ -1,0 +1,17 @@
+Source: turnkey-keys
+Section: misc
+Priority: optional
+Maintainer: Jeremy Davis <jeremy@turnkeylinux.org>
+Build-Depends:
+ debhelper (>= 10),
+ gnupg (>= 2.4.7-21),
+Standards-Version: 4.0.0
+
+Package: turnkey-keys
+Architecture: all
+Depends: apt (>= 3.0.3)
+Description: TurnKey Linux GnuPG signing keys
+ This package includes the GPG keys used to authenticate/verify
+ TurnKey Linux apt repos and images. Apt repo signing keys
+ are provided in a consolidated GPG keyring file. Image signing
+ keys are provided as individual ascii-amored keys.

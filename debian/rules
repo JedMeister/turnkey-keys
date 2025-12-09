@@ -1,0 +1,22 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	# only keys for trixie and onwards included
+	codenames=(trixie)
+	repos=(main security testing)
+	supported_arch=(amd64 arm64)
+	# load individual repo keys into consolidated apt archive keyring
+	# and image signing keys as they are
+	out_key=debian/tkl-archive-keyring.gpg; \
+	for codename in "$${codenames[@]}"; do \
+		for repo in "$${repos[@]}"; do \
+			in_key=keys/tkl-$$codename-$$repo.asc; \
+			gpg --no-default-keyring \
+				--keyring gnupg-ring:"$$out_key" \
+				--import "$$in_key"; \
+		done; \
+		cp keys/tkl-$$codename-images.asc debian/ ;\
+	done
