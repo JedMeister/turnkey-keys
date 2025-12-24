@@ -22,3 +22,4 @@ override_dh_auto_build:
 				--import "$$in_key"; \
 		done; \
 	done
+	gpgconf --kill gpg-agent
