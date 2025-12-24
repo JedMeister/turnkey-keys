@@ -4,6 +4,7 @@ Priority: optional
 Maintainer: Jeremy Davis <jeremy@turnkeylinux.org>
 Build-Depends:
  debhelper (>= 10),
+ debhelper-compat (= 13),
  gnupg (>= 2.4.7-21),
 Standards-Version: 4.0.0
 
